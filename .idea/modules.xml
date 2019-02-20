@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/2Concatenacion/2Concatenacion.iml" filepath="$PROJECT_DIR$/2Concatenacion/2Concatenacion.iml" />
       <module fileurl="file://$PROJECT_DIR$/3CaracteresEspeciales/3CaracteresEspeciales.iml" filepath="$PROJECT_DIR$/3CaracteresEspeciales/3CaracteresEspeciales.iml" />
       <module fileurl="file://$PROJECT_DIR$/4ClaseScanner/4ClaseScanner.iml" filepath="$PROJECT_DIR$/4ClaseScanner/4ClaseScanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5TiposPrimitivosIntegers/5TiposPrimitivosIntegers.iml" filepath="$PROJECT_DIR$/5TiposPrimitivosIntegers/5TiposPrimitivosIntegers.iml" />
     </modules>
   </component>
 </project>
