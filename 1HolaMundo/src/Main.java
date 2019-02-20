@@ -1,15 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-    	String saludos = "Hola Mundo, adios.";
-    	var desp = "despedirse";
-        
-        //Pruebas de impresion con variable saludos
-        System.out.println(saludos);
-        System.out.println(saludos);
-        System.out.println(saludos);
-        
-        //Pruebas de impresion con variable despedirse
-        System.out.println();
-        System.out.println(desp);
+    	var saludar = "Hola";
+    	var usuario = "Juan";
+    	System.out.println(saludar + " " + usuario);
+
+    	//Saludos mi nombre es Juan
+    	System.out.println("Saludos mi nombre es: " + usuario);
     }
 }
