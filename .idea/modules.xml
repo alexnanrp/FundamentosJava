@@ -7,6 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/3CaracteresEspeciales/3CaracteresEspeciales.iml" filepath="$PROJECT_DIR$/3CaracteresEspeciales/3CaracteresEspeciales.iml" />
       <module fileurl="file://$PROJECT_DIR$/4ClaseScanner/4ClaseScanner.iml" filepath="$PROJECT_DIR$/4ClaseScanner/4ClaseScanner.iml" />
       <module fileurl="file://$PROJECT_DIR$/5TiposPrimitivosIntegers/5TiposPrimitivosIntegers.iml" filepath="$PROJECT_DIR$/5TiposPrimitivosIntegers/5TiposPrimitivosIntegers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/6TiposPrimitivosFlotantes/6TiposPrimitivosFlotantes.iml" filepath="$PROJECT_DIR$/6TiposPrimitivosFlotantes/6TiposPrimitivosFlotantes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7TiposPrimitivosChar/7TiposPrimitivosChar.iml" filepath="$PROJECT_DIR$/7TiposPrimitivosChar/7TiposPrimitivosChar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8TiposPrimitivosBoolean/8TiposPrimitivosBoolean.iml" filepath="$PROJECT_DIR$/8TiposPrimitivosBoolean/8TiposPrimitivosBoolean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9ConversionTiposPrimitivos/9ConversionTiposPrimitivos.iml" filepath="$PROJECT_DIR$/9ConversionTiposPrimitivos/9ConversionTiposPrimitivos.iml" />
     </modules>
   </component>
 </project>
