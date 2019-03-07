@@ -2,6 +2,9 @@ public class Persona{
     //Atributos
     private String nombre, apellido;
     private boolean borrado;
+    
+    //Constructor vacio
+    public Persona(){}
 
     //Constructor
     public Persona(String nombre, String apellido, boolean borrado){
