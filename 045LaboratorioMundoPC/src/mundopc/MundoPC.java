@@ -22,8 +22,6 @@ public class MundoPC{
         //================================== Portales ===================================
         String portalEntradas="si", portalRaton="si", portalMonitor="si";
         //Tipos Objetos
-        StockEntradas stockEntradas = new StockEntradas(); 
-        StockEntradas arrayStockEntradas[]; 
         //Creamos el objeto scanner
         Scanner scanner = new Scanner(System.in);
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

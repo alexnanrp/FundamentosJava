@@ -1,22 +1,23 @@
 package com.gm.mundopc;
 public class DispositivoEntradas{
-	//Atributos
+	//::::::::::::::::::::::::::::::::::::: Atributos :::::::::::::::::::::::::::::::::::::
 	private int idTipoEntrada;
 	private static int contadorTipoEntrada;
 	private String tipoEntrada;
+	//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	
-	//Se crea el constructor sin argumentos
+	//============ Se crea el constructor sin argumentos ============
 	public DispositivoEntradas(){
 		this.idTipoEntrada = ++contadorTipoEntrada;
 	}
 
-	//Constructor con argumentos
+	//============ Constructor con argumentos ============
 	public DispositivoEntradas(String tipoEntrada){
 		this();
 		this.tipoEntrada = tipoEntrada;
 	}
 
-	//Metodos set y get
+	//================= Metodos set y get =================
 
 	//get tipo:String, getTipoEntrada, variable:tipoEntrada
 	public String getTipoEntrada(){

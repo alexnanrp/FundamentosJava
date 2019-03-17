@@ -9,7 +9,6 @@ public class Raton extends DispositivoEntradas{
 	//===========================================
 	//====Dependen de la clase "Raton"====
 	//===========================================
-	private static int contadorRaton;
     private static final int maxComputadoras = 100;
 
     //Constructor vacio sin argumentos
