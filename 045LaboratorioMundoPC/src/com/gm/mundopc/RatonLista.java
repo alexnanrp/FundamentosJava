@@ -18,4 +18,12 @@ public class RatonLista{
 	public void setRatonLista(Raton ratones){
 			this.ratones[contadorRatonLista++]=ratones;
 	}
+
+	@Override
+	public String toString(){
+	    return ratones[contadorRatonLista].getIdRaton() + 
+	           ". Marca: " + ratones[contadorRatonLista].getRatonMarca() + 
+	           ", Entrada: " + ratones[contadorRatonLista].getRatonEntrada() + 
+	           ", Existencia(s): " + ratones[contadorRatonLista].getRatonExistencia(); 
+	}
 }

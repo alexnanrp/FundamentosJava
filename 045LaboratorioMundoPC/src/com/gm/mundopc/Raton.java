@@ -22,6 +22,7 @@ public class Raton extends DispositivoEntradas{
 
     public Raton(String tipoEntrada, String ratonMarca, String ratonEntrada, double ratonCosto, int ratonExistencia){
     	super(tipoEntrada);
+    	this.tipoEntrada = tipoEntrada;
     	this.idRaton = ++contadorRaton;
     	this.ratonMarca=ratonMarca;
     	this.ratonEntrada=ratonEntrada;

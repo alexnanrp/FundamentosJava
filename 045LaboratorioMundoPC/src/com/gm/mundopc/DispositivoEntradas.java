@@ -3,7 +3,7 @@ public class DispositivoEntradas{
 	//::::::::::::::::::::::::::::::::::::: Atributos :::::::::::::::::::::::::::::::::::::
 	private int idTipoEntrada;
 	private static int contadorTipoEntrada;
-	private String tipoEntrada;
+	public String tipoEntrada;
 	//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	
 	//============ Se crea el constructor sin argumentos ============

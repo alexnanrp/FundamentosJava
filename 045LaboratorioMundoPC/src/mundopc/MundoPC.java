@@ -7,7 +7,7 @@ public class MundoPC{
         //################################### STOCK/Tienda ###################################
         //:::::::::::::::::::::::::::::::::::: Atributos ::::::::::::::::::::::::::::::::::::: 
         //==================================== Marca ====================================
-        String computadoraMarca; double computadoraCosto; int computadoraExistencia;
+        String cpuMarca; double cpuCosto; int cpuExistencia, cpuContador=0, cpuArregloContador=0, cpuRam, cpuEspacio;
         //=================================== Monitor ===================================
         String monitorMarca; double monitorCosto; int monitorExistencia, monitorContador=0, monitorArregloContador=0, monitorPulgadas;
         //=================================== Entrada ===================================
@@ -25,8 +25,14 @@ public class MundoPC{
 
         TecladoLista tecladoLista = new TecladoLista();
         Teclado[] teclados = tecladoLista.getTecladoLista();
+
+        MonitorLista monitorLista = new MonitorLista();
+        Monitor[] monitores = monitorLista.getMonitorLista();
+
+        CpuLista cpuLista = new CpuLista();
+        Cpu[] cpus = cpuLista.getCpuLista();
         //================================== Portales ===================================
-        String portalEntradas="si", portalRaton="si", portalTeclado="si", portalMonitor="si";
+        String portalEntradas="si", portalRaton="si", portalTeclado="si", portalMonitor="si", portalCpu="si", portalComprasCpu="si";
         //Tipos Objetos
         //Creamos el objeto scanner
         Scanner scanner = new Scanner(System.in);
@@ -99,6 +105,9 @@ public class MundoPC{
             	entrada = scanner.nextLine();
             	Raton raton = new Raton(entrada,ratonMarca,entrada,ratonCosto,ratonExistencia);
             	ratonLista.setRatonLista(raton);
+
+                listaEntradas.setArrayEntradas(raton);
+
             }else{
                   Raton raton = new Raton();
                   raton.setRatonMarca(ratonMarca);
@@ -152,6 +161,8 @@ public class MundoPC{
             	entrada = scanner.nextLine();
             	Teclado teclado = new Teclado(entrada,tecladoMarca,entrada,tecladoCosto,tecladoExistencia);
             	tecladoLista.setTecladoLista(teclado);
+
+            	listaEntradas.setArrayEntradas(teclado);
             }else{
                   Teclado teclado = new Teclado();
                   teclado.setTecladoMarca(tecladoMarca);
@@ -195,65 +206,72 @@ public class MundoPC{
                   monitor.setMonitorCosto(monitorCosto);
                   monitor.setMonitorExistencia(monitorExistencia);
                   monitor.setMonitorPulgadas(monitorPulgadas);
-//                  tecladoLista.setTecladoLista(teclado);
+                  monitorLista.setMonitorLista(monitor);
 
             System.out.print("¿Deseas ingresar una nueva entrada? [si/no]: ");
             portalMonitor = scanner.nextLine();
         } while(!portalMonitor.equals("no"));
+        //---------------------------------------- CicloFor ----------------------------------------
+        for (int i = 0; i < monitores.length; i++) {
+            	if(monitores[i] == null){break;}
+                System.out.println(monitores[i].getIdMonitor() + ". Marca: " + monitores[i].getMonitorMarca() + ", Existencia(s): " + monitores[i].getMonitorExistencia() + ", pulgadas: " + monitores[i].getMonitorPulgadas());
+        }
+        //---------------------------------------- CicloFor ----------------------------------------
+        //=========================================================================================================
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("Computadora: ");
+        //============================================== Computadora ==============================================
+        do{
+        	cpuContador = ++cpuContador;
+        	cpuArregloContador = cpuContador - 1;
+        	System.out.println("==========================================================");
+            System.out.print("Marca del CPU: ");
+            cpuMarca = scanner.nextLine();
+            System.out.print("Costo del CPU: ");
+            cpuCosto = Double.parseDouble(scanner.nextLine());
+            System.out.print("En existencia: ");
+            cpuExistencia = Integer.parseInt(scanner.nextLine());
+            System.out.print("Memoria Ram: ");
+            cpuRam = Integer.parseInt(scanner.nextLine());
+            System.out.print("GB en Disco: ");
+            cpuEspacio = Integer.parseInt(scanner.nextLine());
+            
+                  Cpu cpu = new Cpu();
+                  cpu.setCpuMarca(cpuMarca);
+                  cpu.setCpuCosto(cpuCosto);
+                  cpu.setCpuExistencia(cpuExistencia);
+                  cpu.setCpuRam(cpuRam);
+                  cpu.setCpuEspacio(cpuEspacio);
+                  cpuLista.setCpuLista(cpu);
+
+            System.out.print("¿Deseas ingresar una nueva entrada? [si/no]: ");
+            portalCpu = scanner.nextLine();
+        } while(!portalCpu.equals("no"));
+        //---------------------------------------- CicloFor ----------------------------------------
+        for (int i = 0; i < cpus.length; i++) {
+            	if(cpus[i] == null){break;}            	
+                System.out.println(cpus[i].getIdCpu() + ". Marca: " + cpus[i].getCpuMarca() + ", Existencia(s): " + cpus[i].getCpuExistencia()  + ", Costo: " + cpus[i].getCpuCosto() + ", Espacio GB: " + cpus[i].getCpuEspacio() + ", Memoria Ram: " + cpus[i].getCpuRam());
+        }
+        //---------------------------------------- CicloFor ----------------------------------------
         //=========================================================================================================
 
-
-
-
-
-
-        
-
-        /*
-        System.out.println("Valores solicitados para el stok: ");
+        //################################################ Compras ################################################
         System.out.println();
-        System.out.println("Por favor ingrese la marca de la computadora: ");
-        computadoraMarca = scanner.nextLine();
-        System.out.println("Por favor ingrese el costo unitario: ");
-        computadoraCosto = Double.parseDouble(scanner.nextLine());
-        System.out.println("Por favor ingrese las existencias: ");
-        computadoraExistencia = Integer.parseInt(scanner.nextLine());
-        System.out.println("Computadora: \""+computadoraMarca+"\", en existencia: " + computadoraExistencia + " y el costo unitario es: " +computadoraCosto);
         System.out.println();
-
-        System.out.println("Por favor ingrese la marca del monitor: ");
-        monitorMarca = scanner.nextLine();
-        System.out.println("Por favor ingrese el costo unitario: ");
-        monitorCosto = Double.parseDouble(scanner.nextLine());
-        System.out.println("Por favor ingrese las existencias: ");
-        monitorExistencia = Integer.parseInt(scanner.nextLine());
-        System.out.println("Monitor: \""+monitorMarca+"\", en existencia: " + monitorExistencia + " y el costo unitario es: " + monitorCosto);
         System.out.println();
+        System.out.println("################################# Compras: #################################");
 
-        System.out.println("Por favor ingrese la marca del raton: ");
-        ratonMarca = scanner.nextLine();
-        System.out.println("Por favor ingrese la entrada del raton: ");
-        ratonEntrada = scanner.nextLine();
-        System.out.println("Por favor ingrese el costo unitario: ");
-        ratonCosto = Double.parseDouble(scanner.nextLine());
-        System.out.println("Por favor ingrese las existencias: ");
-        ratonExistencia = Integer.parseInt(scanner.nextLine());
-        System.out.println("Raton: \""+ratonMarca+"\", con entrada tipo: \"" + ratonEntrada + "\" en existencia: " + ratonExistencia + " y el costo unitario es: " + ratonCosto);
-        System.out.println();
-        
+        do{
+        	System.out.println("==========================================================");
+        	System.out.print("Por favor elige el CPU: ");
 
-        System.out.println("Por favor ingrese la marca del teclado: ");
-        tecladoMarca = scanner.nextLine();
-        System.out.println("Por favor ingrese la entrada del teclado: ");
-        tecladoEntrada = scanner.nextLine();
-        System.out.println("Por favor ingrese el costo unitario: ");
-        tecladoCosto = Double.parseDouble(scanner.nextLine());
-        System.out.println("Por favor ingrese las existencias: ");
-        tecladoExistencia = Integer.parseInt(scanner.nextLine());
-        System.out.println("Teclado: \""+ tecladoMarca +"\", con entrada tipo: \"" + tecladoEntrada + "\" en existencia: " + tecladoExistencia + " y el costo unitario es: " + tecladoCosto);
-        System.out.println();
-        */
+        	System.out.print("¿Deseas comprar otro CPU? [si/no]: ");
+            portalComprasCpu = scanner.nextLine();
+        }while(!portalComprasCpu.equals("no"));
 
+        //#########################################################################################################
 
     }
 }

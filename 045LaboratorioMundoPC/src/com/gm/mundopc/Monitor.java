@@ -57,5 +57,10 @@ public class Monitor{
 	public void setMonitorExistencia(int monitorExistencia){
 			this.monitorExistencia=monitorExistencia;
 	}
+
+	//get idMonitor
+	public int getIdMonitor(){
+			return idMonitor;
+	}
 	//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 }
