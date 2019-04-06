@@ -73,5 +73,16 @@ public class Cpu{
 	public int getIdCpu(){
 			return idCpu;
 	}
+
+	@Override
+	public String toString(){
+	    return this.idCpu + 
+	           ". Marca: " + this.cpuMarca + 
+	           ", Existencia(s): " + this.cpuExistencia  +  
+	           ", Espacio GB: " + this.cpuEspacio + 
+	           ", Memoria Ram: " + this.cpuRam +
+	           ", Costo: " + this.cpuCosto
+	           ; 
+	}
 	//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 }

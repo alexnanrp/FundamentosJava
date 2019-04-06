@@ -69,6 +69,15 @@ public class Raton extends DispositivoEntradas{
     public int getIdRaton(){
     		return idRaton;
     }
+
+    @Override
+    public String toString(){
+        return this.idRaton + ". Marca: " + this.ratonMarca + 
+               ", Entrada: " + this.ratonEntrada            + 
+               ", Existencia(s): " + this.ratonExistencia   +
+               ", Costo: " + this.ratonCosto
+               ; 
+    }
     //=====================================================
 
 }

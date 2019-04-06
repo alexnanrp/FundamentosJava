@@ -16,6 +16,8 @@ public class MundoPC{
         String ratonMarca; double ratonCosto; int ratonExistencia, ratonContador=0, ratonEntrada, ratonArregloContador=0;
         //=================================== Teclado ===================================
         String tecladoMarca; double tecladoCosto; int tecladoExistencia, tecladoContador=0, tecladoEntrada, tecladoArregloContador=0;
+        //=================================== Compras ===================================
+        int comprasSeleccion=0;
         //=================================== Objetos ===================================
         ListaEntradas listaEntradas = new ListaEntradas();
         DispositivoEntradas[] entradaLista = listaEntradas.getArrayEntradas();
@@ -31,6 +33,9 @@ public class MundoPC{
 
         CpuLista cpuLista = new CpuLista();
         Cpu[] cpus = cpuLista.getCpuLista();
+
+        //================ compras ==================
+        Compras compras = new Compras();
         //================================== Portales ===================================
         String portalEntradas="si", portalRaton="si", portalTeclado="si", portalMonitor="si", portalCpu="si", portalComprasCpu="si";
         //Tipos Objetos
@@ -124,7 +129,7 @@ public class MundoPC{
         //---------------------------------------- CicloFor ----------------------------------------
         for (int i = 0; i < ratones.length; i++) {
             	if(ratones[i] == null){break;}
-                System.out.println(ratones[i].getIdRaton() + ". Marca: " + ratones[i].getRatonMarca() + ", Entrada: " + ratones[i].getRatonEntrada() + ", Existencia(s): " + ratones[i].getRatonExistencia());
+                System.out.println(ratones[i].toString());
         }
         //---------------------------------------- CicloFor ----------------------------------------
         //=========================================================================================================
@@ -179,7 +184,8 @@ public class MundoPC{
         //---------------------------------------- CicloFor ----------------------------------------
         for (int i = 0; i < teclados.length; i++) {
             	if(teclados[i] == null){break;}
-                System.out.println(teclados[i].getIdTeclado() + ". Marca: " + teclados[i].getTecladoMarca() + ", Entrada: " + teclados[i].getTecladoEntrada() + ", Existencia(s): " + teclados[i].getTecladoExistencia());
+                System.out.println(teclados[i].toString());
+                
         }
         //---------------------------------------- CicloFor ----------------------------------------
         //=========================================================================================================
@@ -214,7 +220,8 @@ public class MundoPC{
         //---------------------------------------- CicloFor ----------------------------------------
         for (int i = 0; i < monitores.length; i++) {
             	if(monitores[i] == null){break;}
-                System.out.println(monitores[i].getIdMonitor() + ". Marca: " + monitores[i].getMonitorMarca() + ", Existencia(s): " + monitores[i].getMonitorExistencia() + ", pulgadas: " + monitores[i].getMonitorPulgadas());
+                System.out.println(monitores[i].toString());
+                
         }
         //---------------------------------------- CicloFor ----------------------------------------
         //=========================================================================================================
@@ -252,7 +259,8 @@ public class MundoPC{
         //---------------------------------------- CicloFor ----------------------------------------
         for (int i = 0; i < cpus.length; i++) {
             	if(cpus[i] == null){break;}            	
-                System.out.println(cpus[i].getIdCpu() + ". Marca: " + cpus[i].getCpuMarca() + ", Existencia(s): " + cpus[i].getCpuExistencia()  + ", Costo: " + cpus[i].getCpuCosto() + ", Espacio GB: " + cpus[i].getCpuEspacio() + ", Memoria Ram: " + cpus[i].getCpuRam());
+                System.out.println(cpus[i].toString());
+                
         }
         //---------------------------------------- CicloFor ----------------------------------------
         //=========================================================================================================
@@ -265,12 +273,85 @@ public class MundoPC{
 
         do{
         	System.out.println("==========================================================");
-        	System.out.print("Por favor elige el CPU: ");
-
+        	System.out.println("========================== CPU ===========================");
+        	//---------------------------------------- CicloFor ----------------------------------------
+            for (int i = 0; i < cpus.length; i++) {
+                	if(cpus[i] == null){break;}            	
+                    System.out.println(cpus[i].toString());  
+            }
+            //---------------------------------------- CicloFor ----------------------------------------
+            System.out.println("==========================");
+            System.out.print("Por favor elige el CPU: ");
+            comprasSeleccion = Integer.parseInt(scanner.nextLine());
+            compras.setComprasCpus(cpus[comprasSeleccion-1]);
         	System.out.print("¿Deseas comprar otro CPU? [si/no]: ");
             portalComprasCpu = scanner.nextLine();
         }while(!portalComprasCpu.equals("no"));
 
+
+        do{
+        	System.out.println("==========================================================");
+        	System.out.println("======================== Monitor =========================");
+        	//---------------------------------------- CicloFor ----------------------------------------
+            for (int i = 0; i < monitores.length; i++) {
+                	if(monitores[i] == null){break;}            	
+                    System.out.println(monitores[i].toString());  
+            }
+            //---------------------------------------- CicloFor ----------------------------------------
+            System.out.println("==========================");
+            System.out.print("Por favor elige el Monitor: ");
+            comprasSeleccion = Integer.parseInt(scanner.nextLine());
+            compras.setComprasMonitores(monitores[comprasSeleccion-1]);
+        	System.out.print("¿Deseas comprar otro Monitor? [si/no]: ");
+            portalMonitor = scanner.nextLine();
+        }while(!portalMonitor.equals("no"));
+
+
+        do{
+        	System.out.println("==========================================================");
+        	System.out.println("======================== Teclado =========================");
+        	//---------------------------------------- CicloFor ----------------------------------------
+            for (int i = 0; i < teclados.length; i++) {
+                	if(teclados[i] == null){break;}            	
+                    System.out.println(teclados[i].toString());  
+            }
+            //---------------------------------------- CicloFor ----------------------------------------
+            System.out.println("==========================");
+            System.out.print("Por favor elige el Teclado: ");
+            comprasSeleccion = Integer.parseInt(scanner.nextLine());
+            compras.setComprasTeclados(teclados[comprasSeleccion-1]);
+        	System.out.print("¿Deseas comprar otro Teclado? [si/no]: ");
+            portalTeclado = scanner.nextLine();
+        }while(!portalTeclado.equals("no"));
+
+
+        do{
+        	System.out.println("==========================================================");
+        	System.out.println("======================== Raton =========================");
+        	//---------------------------------------- CicloFor ----------------------------------------
+            for (int i = 0; i < ratones.length; i++) {
+                	if(ratones[i] == null){break;}            	
+                    System.out.println(ratones[i].toString());  
+            }
+            //---------------------------------------- CicloFor ----------------------------------------
+            System.out.println("==========================");
+            System.out.print("Por favor elige el Raton: ");
+            comprasSeleccion = Integer.parseInt(scanner.nextLine());
+            compras.setComprasRatones(ratones[comprasSeleccion-1]);
+        	System.out.print("¿Deseas comprar otro Raton? [si/no]: ");
+            portalRaton = scanner.nextLine();
+        }while(!portalRaton.equals("no"));
+
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("================================= Total: =================================");
+        //Cpu hola[] = compras.getCarritoTotal();
+        //System.out.println(hola.length);
+
+        System.out.println(compras.getCarritoTotal());
+        
         //#########################################################################################################
 
     }

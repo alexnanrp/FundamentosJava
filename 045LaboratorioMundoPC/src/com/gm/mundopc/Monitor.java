@@ -45,7 +45,7 @@ public class Monitor{
 			return monitorCosto;
 	}
 	//set tipo:double, setCostoMonitor, variable:monitorCosto
-	public void setMonitorCosto(double costoMonitor){
+	public void setMonitorCosto(double monitorCosto){
 			this.monitorCosto=monitorCosto;
 	}
 
@@ -61,6 +61,16 @@ public class Monitor{
 	//get idMonitor
 	public int getIdMonitor(){
 			return idMonitor;
+	}
+
+	@Override
+	public String toString(){
+	    return this.idMonitor + 
+	           ". Marca: " + this.monitorMarca + 
+	           ", Existencia(s): " + this.monitorExistencia + 
+	           ", pulgadas: " + this.monitorPulgadas + 
+	           ", Costo: " + this.monitorCosto
+	           ; 
 	}
 	//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 }

@@ -61,6 +61,16 @@ public class Teclado extends DispositivoEntradas{
 	public int getIdTeclado(){
 			return idTeclado;
 	}
+
+	@Override
+	public String toString(){
+	    return this.idTeclado + 
+	           ". Marca: " + this.tecladoMarca + 
+	           ", Entrada: " + this.tecladoEntrada + 
+	           ", Existencia(s): " + this.tecladoExistencia +
+	           ", Costo: " + this.tecladoCosto
+	           ; 
+	}
 	//=============================================================================
 
 }
